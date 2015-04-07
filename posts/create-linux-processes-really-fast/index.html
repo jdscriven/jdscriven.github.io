@@ -1,0 +1,42 @@
+<p><strong>Hello</strong></p>
+
+<p><em>Emphasis</em></p>
+
+<p>Here is some <code>code</code></p>
+
+<p>hello there</p>
+
+<div class='code-sample'>
+<!-- Generator: GNU source-highlight 3.1.7
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span class="preproc">#include</span><span class="normal"> </span><span class="string">&lt;sys/wait.h&gt;</span>
+<span class="preproc">#include</span><span class="normal"> </span><span class="string">&lt;stdlib.h&gt;</span>
+<span class="preproc">#include</span><span class="normal"> </span><span class="string">&lt;unistd.h&gt;</span>
+
+<span class="type">int</span><span class="normal"> </span><span class="function">main</span><span class="symbol">(</span><span class="type">int</span><span class="normal"> argc</span><span class="symbol">,</span><span class="normal"> </span><span class="type">char</span><span class="normal"> </span><span class="symbol">**</span><span class="normal">argv</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">   </span><span class="type">int</span><span class="normal"> status</span><span class="symbol">;</span>
+<span class="normal">   </span><span class="type">int</span><span class="normal"> count </span><span class="symbol">=</span><span class="normal"> </span><span class="function">atoi</span><span class="symbol">(</span><span class="normal">argv</span><span class="symbol">[</span><span class="number">1</span><span class="symbol">]);</span>
+<span class="normal">   </span><span class="type">char</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">command </span><span class="symbol">=</span><span class="normal"> argv</span><span class="symbol">[</span><span class="number">2</span><span class="symbol">];</span>
+<span class="comment">//    printf("%s %d",command, count);</span>
+<span class="normal">   </span><span class="type">char</span><span class="symbol">**</span><span class="normal"> childArgs </span><span class="symbol">=</span><span class="normal"> </span><span class="symbol">(</span><span class="type">char</span><span class="normal"> </span><span class="symbol">*[])</span><span class="cbracket">{</span><span class="normal">command</span><span class="symbol">,</span><span class="normal"> argv</span><span class="symbol">[</span><span class="number">3</span><span class="symbol">],</span><span class="normal">NULL</span><span class="cbracket">}</span><span class="symbol">;</span>
+<span class="normal">   </span><span class="keyword">for</span><span class="normal"> </span><span class="symbol">(</span><span class="type">int</span><span class="normal"> i</span><span class="symbol">=</span><span class="number">0</span><span class="symbol">;</span><span class="normal">i</span><span class="symbol">&lt;</span><span class="normal">count</span><span class="symbol">;</span><span class="normal">i</span><span class="symbol">++)</span><span class="cbracket">{</span>
+<span class="normal">       </span><span class="type">int</span><span class="normal"> x </span><span class="symbol">=</span><span class="normal"> </span><span class="function">vfork</span><span class="symbol">();</span>
+<span class="normal">       </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">x</span><span class="symbol">==-</span><span class="number">1</span><span class="symbol">)</span><span class="cbracket">{</span>
+<span class="comment">//            printf("Error\n");</span>
+<span class="normal">       </span><span class="cbracket">}</span>
+<span class="normal">       </span><span class="keyword">else</span><span class="normal"> </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">x</span><span class="symbol">==</span><span class="number">0</span><span class="symbol">)</span><span class="cbracket">{</span>
+<span class="normal">           </span><span class="function">execv</span><span class="symbol">(</span><span class="normal">command</span><span class="symbol">,</span><span class="normal"> childArgs</span><span class="symbol">);</span>
+<span class="normal">           </span><span class="function">_exit</span><span class="symbol">(</span><span class="number">1</span><span class="symbol">);</span>
+<span class="normal">       </span><span class="cbracket">}</span>
+<span class="normal">       </span><span class="keyword">else</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">           </span><span class="function">waitpid</span><span class="symbol">(</span><span class="normal">x</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">&amp;</span><span class="normal">status</span><span class="symbol">,</span><span class="number">0</span><span class="symbol">);</span>
+<span class="normal">       </span><span class="cbracket">}</span>
+<span class="normal">   </span><span class="cbracket">}</span>
+<span class="cbracket">}</span>
+</tt></pre>
+</div>
+
+<p>after code</p>

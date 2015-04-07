@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+if [[ $1 == @@code* ]] ;
+ then
+  echo "<div class='code-sample'>"
+  source-highlight --out-format html-css -i ${1:6} -o STDOUT
+  echo "</div>"
+ else
+  echo $1
+ fi
