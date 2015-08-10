@@ -1,0 +1,120 @@
+/* Solarized Dark
+
+http://ethanschoonover.com/solarized
+
+SOLARIZED HEX ROLE
+--------- -------- ------------------------------------------
+base03 #002b36 background
+base01 #586e75 comments / secondary content
+base1  #93a1a1 body text / default code / primary content
+orange #cb4b16 constants
+red    #dc322f regex, special keywords
+blue   #268bd2 reserved keywords
+cyan   #2aa198 strings, numbers
+green  #859900 operators, other keywords
+*/ 
+
+p {
+  margin:0;
+}
+body {
+  font-size: 11pt;
+  margin:0;
+  Zbackground-color: #93a1a1;
+  font-family: "Open Sans",Helvetica,Arial,sans-serif;
+}
+div.container {
+  width: 100%;
+}
+div.content-header span{
+  position: absolute;
+  padding-left: 50px;
+  bottom: 0;
+  left: 0;
+}
+div.content-header {
+  position: relative;
+  Zbackground-color: #eee8d5;
+  text-align: bottom;
+  padding-left: 50px;
+  border-bottom: 10px solid;
+  border-color: #cb4b16;
+  font-variant: small-caps;
+  height: 100px;
+  font-size: 50pt;
+}
+div.full-header {
+  background-color: #666666;
+  padding: 0px;
+  border: none;
+  height: 0px;
+  font-size: 20pt;
+}
+div.content-container {
+  background-color: #ffffff;
+  border-radius: 5px;
+  min-height: 200px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+div.content {
+  padding: 50px;
+}
+div.content p {
+  margin-top:20px;
+  margin-bottom:20px;
+}
+div.codesample {
+  font-size: 10pt;
+  font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
+  margin-left: 15px;
+  margin-right: 40px;
+  padding: 10px;
+}
+div.codesample pre {
+  border-right: solid 2px;
+  border-bottom: solid 2px;
+  border-color:#eee8d5;
+  border-radius: 6px;
+}
+/*
+div.codesample {  color: #93a1a1; background-color: #002b36; }
+span.type {  color: #859900; font-weight: bold; }
+span.comment { color: #586e75; }
+span.cbracket { color: #eee8d5;  }
+span.preproc { color: #859900; }
+span.keyword { color: #268bd2; }
+span.number { color: #2aa198; }
+span.symbol { color: #93a1a1; }
+*/
+div.codesample pre { color: #073642; background-color: #fdf6e3; }
+span.normal { color: #073642; }
+span.type {  color: #859900; font-weight: bold; }
+span.comment {  color: #93a1a1;}
+span.cbracket { color: #073642;  }
+span.preproc { color: #859900; }
+span.keyword { color: #268bd2; }
+span.number { color: #2aa198; }
+span.symbol { color: #586e75; }
+
+/*
+   CSS Line Numbering
+   Uses the a tags that source-highlight spits out
+*/
+div.codesample {
+  counter-reset: linecounter;
+}
+div.codesample pre a {
+  counter-increment: linecounter;
+}
+/* source-highlight insists on adding line-number text when line references are on */
+div.codesample pre span.linenum {
+  display:none;
+}
+div.codesample pre a:before {
+  background-color: #eee8d5;
+  content: counter(linecounter);
+  width: 2em;
+  display: inline-block;
+  Zborder-right: 1px solid black;
+}

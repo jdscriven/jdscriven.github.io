@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+
+while read line
+do
+  if [[ $line == @@inline-code-start* ]]
+  then
+    active=true
+    lang=${line:20}
+    tmpfile=$(mktemp)
+    trap "rm -f $tmpfile" EXIT
+  elif [[ $line == @@inline-code-end* ]]
+  then
+    active=false
+    echo "<div class='codesample'>"
+    <$tmpfile source-highlight --src-lang=$lang --out-format html-css --line-number-ref -o STDOUT 
+    echo "</div>"
+    rm $tmpfile
+  elif [[ $active = true ]]
+  then
+    echo "$line" >> $tmpfile
+  else
+    echo "$line"
+  fi
+done
