@@ -20,7 +20,7 @@ p {
 body {
   font-size: 11pt;
   margin:0;
-  Zbackground-color: #93a1a1;
+  background-color: #93a1a1;
   font-family: "Open Sans",Helvetica,Arial,sans-serif;
 }
 div.container {
@@ -28,19 +28,20 @@ div.container {
 }
 div.content-header span{
   position: absolute;
-  padding-left: 50px;
+  Zpadding-left: 50px;
   bottom: 0;
   left: 0;
 }
 div.content-header {
   position: relative;
+  width:100%;
   Zbackground-color: #eee8d5;
   text-align: bottom;
-  padding-left: 50px;
+  Zpadding-left: 50px;
   border-bottom: 10px solid;
   border-color: #cb4b16;
   font-variant: small-caps;
-  height: 100px;
+  Zheight: 100px;
   font-size: 50pt;
 }
 div.full-header {
@@ -52,13 +53,38 @@ div.full-header {
 }
 div.content-container {
   background-color: #ffffff;
-  border-radius: 5px;
+  width:100%;
+  Zborder-radius: 5px;
   min-height: 200px;
   margin-left: 0px;
   margin-right: 0px;
 }
+div.columns-wrapper {
+  table-layout: fixed;
+  width:100%;
+  display:table;
+}
+div.columns {
+  width:100%;
+  display:table-row; 
+}
 div.content {
-  padding: 50px;
+  vertical-align: top;
+  display:table-cell; 
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 70%;
+}
+div.columntwo {
+  vertical-align: top;
+  display:table-cell; 
+  padding-right: 15px;
+  padding-left: 15px;
+  background-color: #eee8d5;
+  Zwidth: 30%;
+}
+div.columntwo-content {
+  padding-top: 100px;
 }
 div.content p {
   margin-top:20px;
@@ -72,6 +98,7 @@ div.codesample {
   padding: 10px;
 }
 div.codesample pre {
+  overflow: auto;
   border-right: solid 2px;
   border-bottom: solid 2px;
   border-color:#eee8d5;

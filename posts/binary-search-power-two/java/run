@@ -1,0 +1,1 @@
+ mvn clean test && java -Xmx16G -cp target/classes/  org.reific.ExperimentBinarySearchAliasing && pushd /home/j/jdscriven.github.io/posts/binary-search-power-two/&& Rscript analysis.r && popd && pushd ~/jdscriven.github.io && ./process-posts.sh && popd

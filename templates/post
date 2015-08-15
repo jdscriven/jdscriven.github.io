@@ -10,10 +10,18 @@
   </div>
   <div class='content-container'>
    <div class='content-header'>
-   <span>James Scriven</span>
    </div>
-   <div class='content'>
-    @@@content@@@
+   <div class='columns-wrapper'>
+   <div class='columns'>
+    <div class='content'>
+     @@@content@@@
+    </div>
+    <div class='columntwo'>
+     <div class='columntwo-content'>
+     <b>James Scriven</b> is a Java performance specialist based in Ottawa, Canada. He can be contacted by email at jdscriven@gmail.com.
+     </div>
+    </div>
+   </div>
    </div>
    <div class='contentfooter'>
    </div>
