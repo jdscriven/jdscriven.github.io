@@ -5,5 +5,5 @@ if [[ $1 == @@code* ]] ;
   source-highlight --out-format html-css --line-number-ref -i ${1:6} -o STDOUT 
   echo "</div>"
  else
-  echo $1
+  echo "$1"
  fi
